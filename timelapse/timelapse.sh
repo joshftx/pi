@@ -1,8 +1,8 @@
 #!/bin/bash
 
-SAVEDIR=/var/www/stills
+SAVEDIR=/home/pi/timelapse/stills
 #SAVEDIR=/mnt/usb/stills
-WEBDIR=/var/www
+VIDEODIR=/home/pi/timelapse/video
 filename=%04d-$(date -u +"_%d%m%Y_%H%M-%S").jpg
 videofilename=$(date -u +"%d%m%Y_%H%M-%S").avi
 Hours=$1
@@ -26,8 +26,8 @@ echo $Frequency
 ls $SAVEDIR/*.jpg > stills.txt
 
 #Encode it
-mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 -vf scale=1920:1080 -o $WEBDIR/$videofilename -mf type=jpeg:fps=24 mf://@stills.txt
-python /home/pi/uploader.py /home/pi/uploader.cfg $WEBDIR/$videofilename
+mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 -vf scale=1920:1080 -o $VIDEODIR/$videofilename -mf type=jpeg:fps=24 mf://@stills.txt
+#python /home/pi/timelapse/uploader.py /home/pi/timelapse/uploader.cfg $WEBDIR/$videofilename
 
 #prowl it 
 #curl https://prowl.weks.net/publicapi/add -F apikey=$APIKEY -F application="PiLapse" -F event="TimeLapse Done" -F description="TimeLapseDone"

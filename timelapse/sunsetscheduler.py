@@ -13,5 +13,5 @@ min = result ["sun_phase"]["sunset"]["minute"]
 startHour = int(hour) -1
 startTime = '%s:%s' %(startHour,min)
 
-command = "at -f /home/pi/pi/time.sh " + startTime
+command = "at -f /home/pi/timelapse/time.sh " + startTime
 os.system(command)
