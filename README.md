@@ -1,7 +1,5 @@
-# pi
-Raspberry Pi Projects
+# Raspi auto sunset timelapse
 
-TimeLapse
 
 requirements:
 raspbian jessie
