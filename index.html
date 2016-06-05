@@ -53,11 +53,11 @@ This is a python script which will calculate the next sunset time and schedule a
 I uses anacron to schedule a daily job which will fire off the sunsetscheduler once a day. 
 apt-get install anacron' </p>
 
-<p>*<em>time.sh *</em>
-this is a oneliner which launches the actual timelapse.sh script</p>
+<p><strong>time.sh *</strong></p>
+<p>this is a oneliner which launches the actual timelapse.sh script</p>
 
-<p><strong>timelapse.sh</strong>
-THis script is the one which does all the work. THere's a few directory variables to set. It accepts two arguments - the first is the number of hours to run, and the second is the snapshot interval.  So, running <em>'sh timelapse.sh 2 5'</em> will run for two hours snapping a pic every 5 seconds.</p>
+<p><strong>timelapse.sh</strong></p>
+<p>THis script is the one which does all the work. THere's a few directory variables to set. It accepts two arguments - the first is the number of hours to run, and the second is the snapshot interval.  So, running <em>'sh timelapse.sh 2 5'</em> will run for two hours snapping a pic every 5 seconds.</p>
 
 <p>At the end of the run, mencoder is called and crunches all the pictures into a video, and deletes the jpgs.  WARNING: mencoder was tricky to get installed on the latest raspbian on my pi3.  </p>
         </section>
